@@ -1,0 +1,38 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Número</th>
+        <th scope="col">Opções</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let cont of contatos; let i=index">
+   <td>
+      <tr>{{cont.nome}}</tr>
+    </td>
+    <td>
+        <tr>{{cont.num}}</tr>
+    </td>
+     
+      <td>
+          <tr> <button type="button" (click)="delete(i)"class="btn btn-danger  btn-sm">Excluir</button> </tr>
+        </td>    
+        <td>
+          <tr> <button type="button"  (click)="edit(i)" class="btn btn-warning  btn-sm">Editar</button></tr>
+        </td>
+    </tbody>
+  </table>
+     
+    <form>
+        <div class="form-group ">
+          <label for="nome">Nome:</label>
+          <input type="text" class="form-control sm-3" name="nome"  id="nome" [(ngModel)]="model.nome" placeholder="Digíte seu nome...">
+        </div>
+        
+        <div class="form-group">
+          <label for="num">Número:</label>
+          <input type="text" class="form-control" id="num" name="num"  [(ngModel)]="model.num" placeholder="Digíte seu número... ">
+        </div>
+      </form>
+
+      <button type="submit" class="btn btn-primary" (click)="add()" >Enviar</button>
