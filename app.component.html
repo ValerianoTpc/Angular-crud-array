@@ -1,0 +1,16 @@
+  <table>
+    <tr><td>Nome</td><td><input [(ngModel)]='Contato.Nome' name='Contato.Nome' /></td></tr>
+    <tr><td>Número</td><td><input [(ngModel)]='Contato.Num'name='Contato.Num' /></td></tr>
+    <button (click)='SaveRecord()' >Save</button>
+    </table>
+    <table>
+    <tr>
+    <th>Nome</th><th>Número</th><th>Edit</th><th>Delete</th>
+    </tr>
+    
+    <tr *ngFor='let cont of ListaContatos; let i = index'>
+      <td>{{cont.Nome}}</td><td>{{cont.Num}}</td><td>
+    <button (click)='EditRecord(i)'> Edit</button></td>
+    <button (click)='DeleteRecord(i)' >Delete</button>
+    </tr>
+    </table>
